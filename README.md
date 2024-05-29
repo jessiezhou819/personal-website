@@ -1,5 +1,6 @@
-# personal-website
-| HTML5, CSS, JavaScript, Fetch API 
+# [My Personal Website](https://jessie-zhou.com/)
+*| HTML5, CSS, JavaScript, Fetch API*
+<br>
 <br>
 - Developed a responsive personal portfolio in HTML that functions seamlessly on both mobile and desktop devices<br>
 - Utilized modern CSS techniques to deliver an adaptive layout and smooth user experience<br>

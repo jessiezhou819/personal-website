@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css"> <!-- link html to css -->
+    <script src="https://kit.fontawesome.com/c8dc7127bb.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div id="header">                   <!-- #header -->
+    <div class="container">         <!-- .container -->
+        <nav>
+            <img src="images/myLogo.png" class="logo">
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <!-- <li><a href="#">Services</a></li> -->
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i> <!-- call func() -->
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i> <!-- call func() -->
+        </nav>
+        <div class="header-text">
+            <p>Passionate Software Developer</p>
+            <h1>Hi, I'm <span>Jessie</span><br>Zhou from UBC</h1>
+        </div>
+    </div>  
+</div>
+<!-- ---------about---------- -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/fu.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>I'm a second-year student at the University of British Columbia, majoring in Computer Science and Statistics. Passionate about technology and data, I'm dedicated to exploring the intersection of these fields to solve complex problems and innovate for the future. Here, you can learn more about my projects, interests, and academic journey.</p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('education')">Education</p>
+                    <!-- <p class="tab-links" onclick="opentab('experience')">Experience</p> -->
+                    <p class="tab-links" onclick="opentab('skills')">Skills</p>
+                </div>
+
+                <div class="tab-contents active-tab" id="education">
+                    <ul>
+                        <li><span>2022 - Current</span><br>University of British Columbia, Bachelor of Science</li>
+                        <li><span>2018 - 2022 </span><br>Shanghai United International School</li>
+                    </ul>
+                </div>
+                <!-- <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>2021</span><br>Peer Tutor</li>
+                        <li><span>Anything</span><br> blabla</li>
+                        <li><span>Other Experience</span><br>haha</li>
+                    </ul>
+                </div> -->
+                <div class="tab-contents" id="skills">
+                    <ul>
+                        <li><span>Programming Languages</span><br>Java, C/C++, Python, R, HTML5/CSS, SQL</li>
+                        <li><span>Testing</span><br>JUnit5, GDB, TDD, writing test plans</li>
+                        <li><span>More...</span><br>Download my Resume below</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ---------portfolio---------- -->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Projects</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/hotel2.png">
+                <div class="layer">
+                    <h3>Hotel Manager APP</h3>
+                    <p>A Java Swing desktop application.</p>
+                    <a href="https://github.com/jessiezhou819/hotel-manager"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/report .png">
+                <div class="layer">
+                    <h3>Wine Quality Prediction</h3>
+                    <p>A data analysis report using KNN classification.</p>
+                    <a href="https://github.com/jessiezhou819/wine-quality-report"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/portfolio.png">
+                <div class="layer">
+                    <h3>Personal Website</h3>
+                    <p>Written using HTML, CSS, and JavaScript. - Recursion :)</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- <a href="#" class="btn">See more</a> -->
+    </div>
+</div>
+<!-- ---------contact---------- -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i> jzhou819@student.ubc.ca</p>
+                <p><i class="fa-solid fa-square-phone"></i> 236-877-4788</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/zhou-jiaqi/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://discord.com/users/zjq97"><i class="fa-brands fa-discord"></i></a>
+                    <a href="https://github.com/jessiezhou819"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <a href="images/Resume - Jiaqi Zhou.pdf" download class="btn btn2">Download CV</a>
+
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Sumbit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright <i class="fa-regular fa-copyright"></i> Jessie Zhou.</p>
+    </div>
+</div>
+
+<!-- ---------JavaScript---------- -->
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname) {
+        for (tablink of tablinks) {
+            tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+    
+    function openmenu() {
+        sidemenu.style.right = "0";
+    }
+    function closemenu() {
+        sidemenu.style.right = "-200px";
+    }
+</script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzbt69mZ1MFySAY953lx85GzPmf68aDmfbs31ydAIJ_tL3HcXCDBhL3wzDBYx2Rt6uLfw/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function() {
+                msg.innerHTML = ""
+            }, 5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+        // console.log('Success!', response)
+    })
+</script>
+    
+</body>
+</html>
